@@ -1,0 +1,42 @@
+FakeShell
+=========
+
+Este é um interpretador de comandos (shell) simulado desenvolvido em Ruby. O
+shell é capaz de simular o gerenciamento de arquivos e parte do gerenciamento de
+processos.
+
+Comandos disponíveis
+--------------------
+
+Comando                Descrição
+--------------------------------------------------------------------------------
+ls                     Exibe o conteúdo do diretório atual
+pwd                    Exibe o diretório atual (caminho completo)
+mkdir <dir>            Cria um diretório <dir>
+cd <dir>               Mudar para o diretório <dir>
+rmdir <dir>            Remove o diretório <dir>
+mkfile <file>          Cria um arquivo <file>
+rmfile <file>          Remove o arquivo <file>
+chmod <file> <attrib>  Altera o atributo do arquivo <file> para <attrib> As
+                       opções para <attrib> são:
+                         +x => define que o arquivo é executável
+                         -x => define que o arquivo não é executável
+                         +r => define que o arquivo é somente para leitura
+                         -r => define que o arquivo pode ser modificado
+<file>                 Cria um processo apartir do arquivo <file>
+ps                     Exibe a lista de processos existentes (criados)
+kill <id>              Exclui (mata) o processo referente ao identificador <id>
+exit                   Encerra o shell e salva aestrutura criada em um arquivo
+help                   Exibe esta lista de comandos disponíveis
+--------------------------------------------------------------------------------
+
+Todas as funcionalidades são simuladas, ou seja, em nenhum momento o shell irá
+criar diretórios e/ou arquivos na memória secundária. Da mesma maneira, em
+nenhum momento o shell executará algum programa (criando o processo). Todas
+essas funcionalidades são simuladas na memória. Não importa o conteúdo dos
+arquivos. O que importa é que os arquivos sejam identificados na estrutura de
+diretórios. A mesma analogia se aplica aos diretórios.
+
+O sistema de arquivos é armazenado automaticamente ao sair para posterior
+utilização. Na criação de processos, o shell somente identifica/representa que
+algum programa está executando. O shell não executa o programa.
